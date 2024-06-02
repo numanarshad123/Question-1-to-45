@@ -912,8 +912,215 @@
 // console.log(`Any of these animals would make a great pet!`)
 
 // Que no 36
+// 36. T-Shirt: Write a function called make_shirt() that accepts a size and the text of a message that should be printed on the shirt. The function should print a sentence summarizing the size of the shirt and the message printed on it. Call the function.
+
+// function make_shirt(size: string, message: string): void {
+//     console.log(`Size of the Shirt is ${size} and the message printed on it is "${message}"`);
+// }
+
+// // Calling the function with specific size and message
+// make_shirt('Medium', 'I love Pakistan!');
+
+// Que no 37
+// Large Shirts: Modify the make_shirt() function so that shirts are large by default with a message that reads I love TypeScript. Make a large shirt and a medium shirt with the default message, and a shirt of any size with a different message.
 
 
+// function make_shirts(size: string = "Large", message: string = "I love Type script"): void {
+//     console.log(`Size of the Shirt is ${size} and the message printed on it is "${message}"`);
+// }
+
+// make_shirts();
+// make_shirts("Medium");
+// make_shirts("Small");
+
+// Que no 38
+// Cities: Write a function called describe_city() that accepts the name of a city and its country. The function should print a simple sentence, such as Karachi is in Pakistan. Give the parameter for the country a default value. Call your function for three different cities, at least one of which is not in the default country.
+
+
+
+// function describe_city (city:string, country:string = "Pakistan"):void {
+
+//     console.log (`${city} is in ${country}`)
+// }
+
+// describe_city("Karachi")
+// describe_city("Lahore")
+// describe_city("Newyork", "USA")
+
+//  Que no 39
+// City Names: Write a function called city_country() that takes in the name of a city and its country. The function should return a string formatted like this:
+
+// "Lahore, Pakistan"
+
+// Call your function with at least three city-country pairs, and print the value that’s returned.
+
+
+// function cityCountry(city: string, country: string): void {
+//     console.log( `${city}, ${country}`);
+//   }
+  
+
+// cityCountry("Karachi", "Pakistan");
+// cityCountry("Tokyo", "Japan");
+// cityCountry("Paris", "France");
+
+// Que no 40
+// Album: Write a function called make_album() that builds a Object describing a music album. The function should take in an artist name and an album title, and it should return a Object containing these two pieces of information. Use the function to make three dictionaries representing different albums. Print each return value to show that Objects are storing the album information correctly. Add an optional parameter to make_album() that allows you to store the number of tracks on an album. If the calling line includes a value for the number of tracks, add that value to the album’s Object. Make at least one new function call that includes the number of tracks on an album.
+
+
+
+// function makeAlbum(artist: string, title: string, tracks?: number): object {
+//     let album = {
+//       artist: artist,
+//       title: title,
+//       tracks:tracks,
+//     };
+  
+//     if (tracks !== undefined) {
+//       album['tracks'] = tracks;
+//     }
+  
+//     return album;
+//   }
+  
+
+//   let album1 = makeAlbum("Atif Aslam", "Tajdar-e-Haram ");
+//   let album2 = makeAlbum("Ali Zafar", "Balaghal-Ula Bi-Kamaalihi ", 12); 
+//   let album3 = makeAlbum("Maher Zain", "Rahmatun Lil'Alameen");
+  
+
+//   console.log(album1);
+//   console.log(album2);
+//   console.log(album3);
+  
+// Que no 41
+// Magicians: Make a array of magician’s names. Pass the array to a function called show_magicians(), which prints the name of each magician in the array.
+
+
+//   // magician names
+//   let magicianNames: string[] = ["Harry potter", "Albus Dumbledore", "Hermione", "Ron "];
+  
+
+
+// function showMagicians(magicians: string[]): void {
+//     magicians.forEach((magician) => {
+//       console.log(magician);
+//     });
+//   }
+  
+
+
+//   showMagicians(magicianNames);
+
+
+// // Que no 42
+// 42. Great Magicians: Start with a copy of your program from Exercise 39.Write a function called make_great() that modifies the array of magicians by adding the phrase the Great to each magician’s name. Call show_magicians() to see that the list has actually been modified.
+
+
+// magician names
+// let magicianNames1: string[] = ["Harry potter", "Albus Dumbledore", "Hermione", "Ron ", "Luna"];
+  
+
+// let greatMagicians = makeGreat(magicianNames1);
+
+
+//   function showMagicians1(magicians1: string[]): void {
+//     magicians1.forEach((magician) => {
+//       console.log(magician);
+//     });
+//   }
+  
+ 
+//   function makeGreat(magicians1: string[]): string[] {
+//     return magicians1.map((magician) => `the Great ${magician}`);
+//   }
+  
+  
+  
+//   showMagicians1(greatMagicians);
+
+
+
+// // Que no 43
+// 43. Unchanged Magicians: Start with your work from Exercise 40. Call the function make_great() with a copy of the array of magicians’ names. Because the
+// original array will be unchanged, return the new array and store it in a separate array. Call show_magicians() with each array to show that you have one array of the original
+// names and one array with the Great added to each magician’s name.
+
+
+
+// // Define the showMagicians function
+// function show_Magicians(magicians2: string[]): void {
+//     magicians2.forEach((magician) => {
+//       console.log(magician);
+//     });
+//   }
+  
+ 
+//   function make_Great(magicians2: string[]): string[] {
+//     return magicians2.map((magician) => `the Great ${magician}`);
+//   }
+  
+//   // magician names
+//   const magician_Names: string[] = ["Harry potter", "Albus Dumbledore", "Hermione", "Ron ", "Luna"];
+  
+
+//   const great_Magicians: string[] = make_Great([...magician_Names]); 
+  
+  
+//   console.log("Original Magicians:");
+//   show_Magicians(magician_Names);
+  
+//   console.log("\nGreat Magicians:");
+//   show_Magicians(great_Magicians);
+  
+// Que no 44 
+// Sandwiches: Write a function that accepts a array of items a person wants on a sandwich. The function should have one parameter that collects as many items as the function call provides, and it should print a summary of the sandwich that is being ordered. Call the function three times, using a different number of arguments each time.
+// function orderSandwich(...items: string[]): void {
+//     console.log("Sandwich Summary:");
+//     if (items.length === 0) {
+//       console.log("You ordered an empty sandwich.");
+//     } else {
+//       console.log("Items: " + items.join(", "));
+//       console.log("Enjoy your sandwich!");
+//     }
+//     console.log(); 
+//   }
+  
+
+//   orderSandwich("Ham", "Cheese", "Lettuce", "Tomato");
+//   orderSandwich("Turkey", "cream cheese", "Mayo");
+//   orderSandwich();
+
+
+// // Que no 45
+// // 45. Cars: Write a function that stores information about a car in a Object. The function should always receive a manufacturer and a model name. It should then accept an arbitrary number of keyword arguments. Call the function with the required information and two other name-value pairs, such as a color or an optional feature. Print the Object that’s returned to make sure all the information was stored correctly.
+
+// interface Car {
+//     manufacturer: string;
+//     model: string;
+//     [key: string]: any; // Allow additional arbitrary properties
+// }
+
+// function createCar(manufacturer: string, model: string, ...options: [string, any][]): Car {
+//     const car: Car = {
+//         manufacturer,
+//         model,
+//     };
+
+//     // Process additional options (name-value pairs)
+//     options.forEach(([key, value]) => {
+//         car[key] = value;
+//     });
+
+//     return car;
+// }
+
+// // Call the function with required information and additional name-value pairs
+// const carInfo: Car = createCar("Toyota", "Camry", ["color", "Blue"], ["year", 2022]);
+
+// // Print the returned object
+// console.log("Car Information:");
+// console.log(carInfo);
 
 
 
